@@ -7,7 +7,12 @@ const port = process.env.PORT || 5000;
 console.log(process.env)
 
 //middleware
-app.use(cors());
+app.use(
+    cors({
+      credentials: true,
+      origin: [process.env.FRONTEND_APP_URL]
+    })
+  );
 app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@handwriting-dataset.wkyksjq.mongodb.net/?retryWrites=true&w=majority`;
