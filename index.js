@@ -26,6 +26,13 @@ async function run() {
             const result = await userInputCollection.insertOne(newInput);
             res.send({ result });
         })
+
+        app.post('/test', async (req, res) => {
+            const newInput = req.body;
+            console.log(newInput)
+            const result = await userInputCollection.insertOne(newInput);
+            res.send({ result });
+        })
     }
     finally {
         // await client.close();
