@@ -40,7 +40,9 @@ async function run() {
     }
 
 }
-run().catch(console.dir);
+run().catch((error) -> {
+    console.log(error);
+});
 
 
 
