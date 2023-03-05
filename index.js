@@ -18,6 +18,7 @@ async function run() {
     try {
         await client.connect();
         console.log("connected");
+        console.log(uri);
         const userInputCollection = client.db("handWrDataset").collection("userInput");
 
         app.post('/user', async (req, res) => {
