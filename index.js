@@ -19,11 +19,7 @@ async function run() {
         console.log(uri);
         try {
             await client.connect();
-        } catch (error)
-        {
-            console.log(error);
-        }
-        console.log("connected");
+                    console.log("connected");
         const userInputCollection = client.db("handWrDataset").collection("userInput");
 
         app.post('/user', async (req, res) => {
@@ -39,9 +35,13 @@ async function run() {
             const result = await userInputCollection.insertOne(newInput);
             res.send({ result });
         })
+        } catch (error)
+        {
+            console.log(error);
+        }
     }
     finally {
-        // await client.close();
+        await client.close();
     }
 
 }
