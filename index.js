@@ -16,9 +16,9 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run() {
     try {
+        console.log(uri);
         await client.connect();
         console.log("connected");
-        console.log(uri);
         const userInputCollection = client.db("handWrDataset").collection("userInput");
 
         app.post('/user', async (req, res) => {
