@@ -18,20 +18,23 @@ async function run() {
     try {
         console.log(uri);
         try {
+            console.log("2");
             await client.connect();
+            console.log("3");
                     console.log("connected");
         const userInputCollection = client.db("handWrDataset").collection("userInput");
-
+        console.log("4");
         app.post('/user', async (req, res) => {
             const newInput = req.body;
-            console.log(newInput)
+            console.log(newInput);
             const result = await userInputCollection.insertOne(newInput);
             res.send({ result });
         })
 
         app.post('/test', async (req, res) => {
+            console.log("5");
             const newInput = req.body;
-            console.log(newInput)
+            console.log(newInput);
             const result = await userInputCollection.insertOne(newInput);
             res.send({ result });
         })
