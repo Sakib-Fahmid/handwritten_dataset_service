@@ -17,11 +17,8 @@ app.get('/hello', (req, res) => {
     res.send('Hello handwriting dataset port a: ' + port);
 })
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 app.post('/user', async (req, res) => {
-=======
-app.post('/test', async (req, res) => {
->>>>>>> 8554c0cd22612cb6ce9b5bbdc48639690ebeb953
     await client.connect();
     const userInputCollection = client.db("handWrDataset").collection("userInput");
     const newInput = req.body;
