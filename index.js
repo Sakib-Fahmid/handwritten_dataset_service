@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
+
 const app = express();
 const port = process.env.PORT || 5000;
-console.log(process.env)
 
 //middleware
 app.use(cors());
@@ -17,7 +17,11 @@ app.get('/hello', (req, res) => {
     res.send('Hello handwriting dataset port a: ' + port);
 })
 
+<<<<<<< HEAD
 app.post('/user', async (req, res) => {
+=======
+app.post('/test', async (req, res) => {
+>>>>>>> 8554c0cd22612cb6ce9b5bbdc48639690ebeb953
     await client.connect();
     const userInputCollection = client.db("handWrDataset").collection("userInput");
     const newInput = req.body;
